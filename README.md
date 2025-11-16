@@ -105,7 +105,7 @@ Step-by-step interaction diagram showing how users book flights, including seat 
 ### Login Flow Sequence
 Authentication process from user input through validation to session establishment.
 
-![User Login Sequence](PlantUML/UserLoginSequence/User%20Login%20Sequence.png)
+![User Type Hierarchy](PlantUML/UserTypeHierachyAndRelationships/User%20Type%20Hierarchy%20and%20Relationships.png)
 
 ### Package Structure
 Organization of code into logical packages showing dependency relationships.

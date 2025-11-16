@@ -162,12 +162,3 @@ Replace in-memory storage with persistent database using Entity Framework Core a
 ### Modern User Interface
 Upgrade from console UI to a web application using ASP.NET Core MVC with responsive design and real-time updates via SignalR.
 
-### Additional Enhancements
-- RESTful APIs for third-party integrations
-- JWT-based authentication system
-- Unit and integration testing framework
-- Structured logging with Serilog
-
----
-
-**Built with .NET 9.0 and C#**

@@ -1,16 +1,16 @@
 # Brisbane Airport Flight and Passenger Management System
 
-A comprehensive flight management application built with C# and .NET 9.0, demonstrating object-oriented design principles and software engineering best practices.
+A flight management application built with C# and .NET 9.0, demonstrating object-oriented design principles and software engineering best practices.
 
-## How It's Made:
+## How it was made:
 
-This application was developed as part of the CAB201 Object Oriented Design and Implementation course at QUT. The system handles real-world airline operations including user management, flight booking, and loyalty programs.
+This application was developed as part of the CAB201 Programming Principles course at Queensland University of Technology. The system handles real world airline operations including user management, flight booking, and loyalty programs.
 
 The architecture follows a layered approach with clear separation between presentation, business logic, and data access layers. I implemented several design patterns including Strategy for seat booking behavior, Facade for complex operation orchestration, and Repository for data abstraction.
 
 The codebase demonstrates SOLID principles throughout, with dependency injection enabling testability and loose coupling. Each class has a single responsibility, and the system is designed for extensibility - ready for GUI implementation or database integration in future iterations.
 
-## Optimizations
+## Optimisations
 
 ### Performance Considerations
 - In-memory storage provides fast data access for the prototype
@@ -46,6 +46,7 @@ Building this system taught me several valuable lessons:
 **Daniel Bray**  
 Email: daniel.bray@connect.qut.edu.au  
 Phone: 0492426521
+Linkedin: https://www.linkedin.com/in/daniel-nerome-bray/
 
 This project showcases advanced C# programming skills, object-oriented design expertise, and a commitment to industry-standard software engineering practices. The system handles complex airline operations while maintaining clean, extensible code architecture.
 
@@ -161,13 +162,3 @@ Replace in-memory storage with persistent database using Entity Framework Core a
 
 ### Modern User Interface
 Upgrade from console UI to a web application using ASP.NET Core MVC with responsive design and real-time updates via SignalR.
-
-### Additional Enhancements
-- RESTful APIs for third-party integrations
-- JWT-based authentication system
-- Unit and integration testing framework
-- Structured logging with Serilog
-
----
-
-**Built with .NET 9.0 and C#**

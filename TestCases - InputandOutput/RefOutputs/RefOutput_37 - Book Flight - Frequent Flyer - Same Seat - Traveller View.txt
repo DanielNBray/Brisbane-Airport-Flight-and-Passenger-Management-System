@@ -1,0 +1,563 @@
+==========================================
+=  Welcome to Brisbane Domestic Airport  =
+==========================================
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Which user type would you like to register?
+1. A standard traveller.
+2. A frequent flyer.
+3. A flight manager.
+Please enter a choice between 1 and 3:
+Registering as a flight manager.
+Please enter in your name:
+Please enter in your age between 0 and 99:
+Please enter in your mobile number:
+Please enter in your email:
+Please enter in your password:
+Your password must:
+-be at least 8 characters long 
+-contain a number
+-contain a lowercase letter
+-contain an uppercase letter
+Please enter in your staff id between 1000 and 9000:
+Congratulations Rosa Chavez. You have registered as a flight manager.
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Login Menu.
+Please enter in your email:
+Please enter in your password:
+Welcome back Rosa Chavez.
+
+Flight Manager Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Create an arrival flight.
+4. Create a departure flight.
+5. Delay an arrival flight.
+6. Delay a departure flight.
+7. See the details of all flights.
+8. Logout.
+Please enter a choice between 1 and 8:
+Please enter the airline:
+1. Jetstar
+2. Qantas
+3. Regional Express
+4. Virgin
+5. Fly Pelican
+Please enter a choice between 1 and 5:
+Please enter the departing city:
+1. Sydney
+2. Melbourne
+3. Rockhampton
+4. Adelaide
+5. Perth
+Please enter a choice between 1 and 5:
+Please enter in your flight id between 100 and 900:
+Please enter in your plane id between 0 and 9:
+Please enter in the arrival date and time in the format HH:mm dd/MM/yyyy:
+Flight JST150 on plane JST8A has been added to the system.
+
+Flight Manager Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Create an arrival flight.
+4. Create a departure flight.
+5. Delay an arrival flight.
+6. Delay a departure flight.
+7. See the details of all flights.
+8. Logout.
+Please enter a choice between 1 and 8:
+Please enter the airline:
+1. Jetstar
+2. Qantas
+3. Regional Express
+4. Virgin
+5. Fly Pelican
+Please enter a choice between 1 and 5:
+Please enter the arrival city:
+1. Sydney
+2. Melbourne
+3. Rockhampton
+4. Adelaide
+5. Perth
+Please enter a choice between 1 and 5:
+Please enter in your flight id between 100 and 900:
+Please enter in your plane id between 0 and 9:
+Please enter in the departure date and time in the format HH:mm dd/MM/yyyy:
+Flight QFA270 on plane QFA6D has been added to the system.
+
+Flight Manager Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Create an arrival flight.
+4. Create a departure flight.
+5. Delay an arrival flight.
+6. Delay a departure flight.
+7. See the details of all flights.
+8. Logout.
+Please enter a choice between 1 and 8:
+
+Arrival Flights:
+Flight JST150 operated by Jetstar arriving at 09:00 01/04/2025 from Sydney on plane JST8A.
+Departure Flights:
+Flight QFA270 operated by Qantas departing at 13:00 01/04/2025 to Rockhampton on plane QFA6D.
+
+Flight Manager Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Create an arrival flight.
+4. Create a departure flight.
+5. Delay an arrival flight.
+6. Delay a departure flight.
+7. See the details of all flights.
+8. Logout.
+Please enter a choice between 1 and 8:
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Which user type would you like to register?
+1. A standard traveller.
+2. A frequent flyer.
+3. A flight manager.
+Please enter a choice between 1 and 3:
+Registering as a traveller.
+Please enter in your name:
+Please enter in your age between 0 and 99:
+Please enter in your mobile number:
+Please enter in your email:
+Please enter in your password:
+Your password must:
+-be at least 8 characters long 
+-contain a number
+-contain a lowercase letter
+-contain an uppercase letter
+Congratulations Tony Laroon. You have registered as a traveller.
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Login Menu.
+Please enter in your email:
+Please enter in your password:
+Welcome back Tony Laroon.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+Please enter the arrival flight:
+1. Flight JST150 operated by Jetstar arriving at 09:00 01/04/2025 from Sydney on plane JST8A.
+Please enter a choice between 1 and 1:
+Please enter in your seat row between 1 and 10:
+Please enter in your seat column between A and D:
+Congratulations. You have booked flight JST150 from Sydney arriving at 09:00 01/04/2025 and are seated in 8:B.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+Please enter the departure flight:
+1. Flight QFA270 operated by Qantas departing at 13:00 01/04/2025 to Rockhampton on plane QFA6D.
+Please enter a choice between 1 and 1:
+Please enter in your seat row between 1 and 10:
+Please enter in your seat column between A and D:
+Congratulations. You have booked flight QFA270 to Rockhampton departing at 13:00 01/04/2025 and are seated in 4:A.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+Showing flight details for Tony Laroon:
+Arrival Flight: Flight JST150 from Sydney arriving at 09:00 01/04/2025 in seat 8:B.
+Departure Flight: Flight QFA270 to Rockhampton departing at 13:00 01/04/2025 in seat 4:A.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Which user type would you like to register?
+1. A standard traveller.
+2. A frequent flyer.
+3. A flight manager.
+Please enter a choice between 1 and 3:
+Registering as a traveller.
+Please enter in your name:
+Please enter in your age between 0 and 99:
+Please enter in your mobile number:
+Please enter in your email:
+Please enter in your password:
+Your password must:
+-be at least 8 characters long 
+-contain a number
+-contain a lowercase letter
+-contain an uppercase letter
+Congratulations James O'Malley. You have registered as a traveller.
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Login Menu.
+Please enter in your email:
+Please enter in your password:
+Welcome back James O'Malley.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+Please enter the arrival flight:
+1. Flight JST150 operated by Jetstar arriving at 09:00 01/04/2025 from Sydney on plane JST8A.
+Please enter a choice between 1 and 1:
+Please enter in your seat row between 1 and 10:
+Please enter in your seat column between A and D:
+Congratulations. You have booked flight JST150 from Sydney arriving at 09:00 01/04/2025 and are seated in 1:D.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+Please enter the departure flight:
+1. Flight QFA270 operated by Qantas departing at 13:00 01/04/2025 to Rockhampton on plane QFA6D.
+Please enter a choice between 1 and 1:
+Please enter in your seat row between 1 and 10:
+Please enter in your seat column between A and D:
+Congratulations. You have booked flight QFA270 to Rockhampton departing at 13:00 01/04/2025 and are seated in 10:D.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+Showing flight details for James O'Malley:
+Arrival Flight: Flight JST150 from Sydney arriving at 09:00 01/04/2025 in seat 1:D.
+Departure Flight: Flight QFA270 to Rockhampton departing at 13:00 01/04/2025 in seat 10:D.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Which user type would you like to register?
+1. A standard traveller.
+2. A frequent flyer.
+3. A flight manager.
+Please enter a choice between 1 and 3:
+Registering as a frequent flyer.
+Please enter in your name:
+Please enter in your age between 0 and 99:
+Please enter in your mobile number:
+Please enter in your email:
+Please enter in your password:
+Your password must:
+-be at least 8 characters long 
+-contain a number
+-contain a lowercase letter
+-contain an uppercase letter
+Please enter in your frequent flyer number between 100000 and 999999:
+Please enter in your current frequent flyer points between 0 and 1000000:
+Congratulations Shara Lee. You have registered as a frequent flyer.
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Login Menu.
+Please enter in your email:
+Please enter in your password:
+Welcome back Shara Lee.
+
+Frequent Flyer Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. See frequent flyer points.
+7. Logout.
+Please enter a choice between 1 and 7:
+Please enter the arrival flight:
+1. Flight JST150 operated by Jetstar arriving at 09:00 01/04/2025 from Sydney on plane JST8A.
+Please enter a choice between 1 and 1:
+Please enter in your seat row between 1 and 10:
+Please enter in your seat column between A and D:
+Congratulations. You have booked flight JST150 from Sydney arriving at 09:00 01/04/2025 and are seated in 8:B.
+
+Frequent Flyer Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. See frequent flyer points.
+7. Logout.
+Please enter a choice between 1 and 7:
+Please enter the departure flight:
+1. Flight QFA270 operated by Qantas departing at 13:00 01/04/2025 to Rockhampton on plane QFA6D.
+Please enter a choice between 1 and 1:
+Please enter in your seat row between 1 and 10:
+Please enter in your seat column between A and D:
+Congratulations. You have booked flight QFA270 to Rockhampton departing at 13:00 01/04/2025 and are seated in 4:A.
+
+Frequent Flyer Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. See frequent flyer points.
+7. Logout.
+Please enter a choice between 1 and 7:
+Showing flight details for Shara Lee:
+Arrival Flight: Flight JST150 from Sydney arriving at 09:00 01/04/2025 in seat 8:B.
+Departure Flight: Flight QFA270 to Rockhampton departing at 13:00 01/04/2025 in seat 4:A.
+
+Frequent Flyer Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. See frequent flyer points.
+7. Logout.
+Please enter a choice between 1 and 7:
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Which user type would you like to register?
+1. A standard traveller.
+2. A frequent flyer.
+3. A flight manager.
+Please enter a choice between 1 and 3:
+Registering as a frequent flyer.
+Please enter in your name:
+Please enter in your age between 0 and 99:
+Please enter in your mobile number:
+Please enter in your email:
+Please enter in your password:
+Your password must:
+-be at least 8 characters long 
+-contain a number
+-contain a lowercase letter
+-contain an uppercase letter
+Please enter in your frequent flyer number between 100000 and 999999:
+Please enter in your current frequent flyer points between 0 and 1000000:
+Congratulations Suzi Apollo. You have registered as a frequent flyer.
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Login Menu.
+Please enter in your email:
+Please enter in your password:
+Welcome back Suzi Apollo.
+
+Frequent Flyer Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. See frequent flyer points.
+7. Logout.
+Please enter a choice between 1 and 7:
+Please enter the arrival flight:
+1. Flight JST150 operated by Jetstar arriving at 09:00 01/04/2025 from Sydney on plane JST8A.
+Please enter a choice between 1 and 1:
+Please enter in your seat row between 1 and 10:
+Please enter in your seat column between A and D:
+Congratulations. You have booked flight JST150 from Sydney arriving at 09:00 01/04/2025 and are seated in 1:D.
+
+Frequent Flyer Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. See frequent flyer points.
+7. Logout.
+Please enter a choice between 1 and 7:
+Please enter the departure flight:
+1. Flight QFA270 operated by Qantas departing at 13:00 01/04/2025 to Rockhampton on plane QFA6D.
+Please enter a choice between 1 and 1:
+Please enter in your seat row between 1 and 10:
+Please enter in your seat column between A and D:
+Congratulations. You have booked flight QFA270 to Rockhampton departing at 13:00 01/04/2025 and are seated in 10:D.
+
+Frequent Flyer Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. See frequent flyer points.
+7. Logout.
+Please enter a choice between 1 and 7:
+Showing flight details for Suzi Apollo:
+Arrival Flight: Flight JST150 from Sydney arriving at 09:00 01/04/2025 in seat 1:D.
+Departure Flight: Flight QFA270 to Rockhampton departing at 13:00 01/04/2025 in seat 10:D.
+
+Frequent Flyer Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. See frequent flyer points.
+7. Logout.
+Please enter a choice between 1 and 7:
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Login Menu.
+Please enter in your email:
+Please enter in your password:
+Welcome back Tony Laroon.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+Showing flight details for Tony Laroon:
+Arrival Flight: Flight JST150 from Sydney arriving at 09:00 01/04/2025 in seat 8:C.
+Departure Flight: Flight QFA270 to Rockhampton departing at 13:00 01/04/2025 in seat 4:B.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Login Menu.
+Please enter in your email:
+Please enter in your password:
+Welcome back James O'Malley.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+Showing flight details for James O'Malley:
+Arrival Flight: Flight JST150 from Sydney arriving at 09:00 01/04/2025 in seat 2:A.
+Departure Flight: Flight QFA270 to Rockhampton departing at 13:00 01/04/2025 in seat 1:A.
+
+Traveller Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Book an arrival flight.
+4. Book a departure flight.
+5. See flight details.
+6. Logout.
+Please enter a choice between 1 and 6:
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Thank you. Safe travels.

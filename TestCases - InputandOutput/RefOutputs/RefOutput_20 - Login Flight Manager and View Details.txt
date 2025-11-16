@@ -1,0 +1,74 @@
+==========================================
+=  Welcome to Brisbane Domestic Airport  =
+==========================================
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Which user type would you like to register?
+1. A standard traveller.
+2. A frequent flyer.
+3. A flight manager.
+Please enter a choice between 1 and 3:
+Registering as a flight manager.
+Please enter in your name:
+Please enter in your age between 0 and 99:
+Please enter in your mobile number:
+Please enter in your email:
+Please enter in your password:
+Your password must:
+-be at least 8 characters long 
+-contain a number
+-contain a lowercase letter
+-contain an uppercase letter
+Please enter in your staff id between 1000 and 9000:
+Congratulations Rosa Chavez. You have registered as a flight manager.
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Login Menu.
+Please enter in your email:
+Please enter in your password:
+Welcome back Rosa Chavez.
+
+Flight Manager Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Create an arrival flight.
+4. Create a departure flight.
+5. Delay an arrival flight.
+6. Delay a departure flight.
+7. See the details of all flights.
+8. Logout.
+Please enter a choice between 1 and 8:
+Your details.
+Name: Rosa Chavez
+Age: 43
+Mobile phone number: 0494562389
+Email: rosa@example.com
+Staff ID: 2500
+
+Flight Manager Menu.
+Please make a choice from the menu below:
+1. See my details.
+2. Change password.
+3. Create an arrival flight.
+4. Create a departure flight.
+5. Delay an arrival flight.
+6. Delay a departure flight.
+7. See the details of all flights.
+8. Logout.
+Please enter a choice between 1 and 8:
+
+Please make a choice from the menu below:
+1. Login as a registered user.
+2. Register as a new user.
+3. Exit.
+Please enter a choice between 1 and 3:
+Thank you. Safe travels.

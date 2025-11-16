@@ -95,7 +95,7 @@ Complete object model showing relationships between all classes including inheri
 ### User Type Hierarchy and Relationships
 Inheritance structure showing how Traveller and Frequent Flyer extend the base User class, while FlightManager provides administrative capabilities. Includes composition relationships with FlightRecord.
 
-![User Type Hierarchy](PlantUML/UserTypeHierachyAndRelationships/User%20Type%20Hierachy%20and%20Relationships.png)
+![User Type Hierarchy](PlantUML/UserTypeHierachyAndRelationships/User%20Type%20Hierarchy%20and%20Relationships.png)
 
 ### Flight Booking Sequence - Frequent Flyer with Seat Override
 Step-by-step interaction diagram demonstrating how frequent flyers can override occupied seats, displacing existing passengers to their next available seat.

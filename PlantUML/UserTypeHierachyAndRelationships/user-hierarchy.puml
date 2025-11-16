@@ -1,0 +1,95 @@
+@startuml UserHierarchyDiagram
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+title User Type Hierarchy and Relationships
+
+abstract class User {
+  - name: string
+  - age: int
+  - mobile: string
+  - email: string
+  - password: string
+  + BookedArrivalFlight: FlightRecord?
+  + BookedDepartureFlight: FlightRecord?
+  + ArrivalSeat: string?
+  + DepartureSeat: string?
+  --
+  + VerifyPassword(password: string): bool
+  + BookArrivalFlight(flight: FlightRecord, seat: string): void
+  + BookDepartureFlight(flight: FlightRecord, seat: string): void
+  + HasArrivalFlight(): bool
+  + HasDepartureFlight(): bool
+}
+
+class Traveller {
+  + ToString(): string
+}
+
+class FrequentFlyer {
+  - frequentFlyerNumber: int
+  - points: int
+  --
+  + GetFrequentFlyerNumber(): int
+  + GetPoints(): int
+  + SetPoints(points: int): void
+  + CalculateFlightPoints(flight: FlightRecord): int
+  + CalculateTotalFlightPoints(): int
+  + GetPointsBreakdown(): (int, int, int)
+}
+
+class FlightManager {
+  - staffId: string
+  --
+  + GetStaffId(): string
+}
+
+class FlightRecord {
+  + AirlineCode: string
+  + AirlineName: string
+  + CityName: string
+  + FlightId: int
+  + PlaneId: int
+  + When: DateTime
+  + IsArrival: bool
+  --
+  + PlaneCode(): string
+  + FlightCode(): string
+}
+
+' Inheritance
+User <|-- Traveller : extends
+Traveller <|-- FrequentFlyer : extends
+User <|-- FlightManager : extends
+
+' Composition
+User "0..2" --> FlightRecord : books
+
+' Notes
+note right of User
+  Abstract base class
+  for all user types
+  Manages authentication
+  and flight bookings
+end note
+
+note right of FrequentFlyer
+  Inherits from Traveller
+  Adds loyalty program
+  features:
+  - Frequent flyer number
+  - Points system
+  - Points calculation
+end note
+
+note right of FlightManager
+  Staff member with
+  administrative
+  privileges
+  Can manage flights
+end note
+
+@enduml
+
+

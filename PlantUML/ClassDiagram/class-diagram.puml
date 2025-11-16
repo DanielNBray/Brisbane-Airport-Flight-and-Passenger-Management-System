@@ -1,0 +1,169 @@
+@startuml ClassDiagram
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+title Brisbane Airport Management System - Class Diagram
+
+' Domain Model - User Hierarchy
+abstract class User {
+  - name: string
+  - age: int
+  - mobile: string
+  - email: string
+  - password: string
+  + BookedArrivalFlight: FlightRecord?
+  + BookedDepartureFlight: FlightRecord?
+  + ArrivalSeat: string?
+  + DepartureSeat: string?
+  + VerifyPassword(password: string): bool
+  + BookArrivalFlight(flight: FlightRecord, seat: string): void
+  + BookDepartureFlight(flight: FlightRecord, seat: string): void
+  + HasArrivalFlight(): bool
+  + HasDepartureFlight(): bool
+}
+
+class Traveller {
+  + ToString(): string
+}
+
+class FrequentFlyer {
+  - frequentFlyerNumber: int
+  - points: int
+  + GetFrequentFlyerNumber(): int
+  + GetPoints(): int
+  + SetPoints(points: int): void
+  + CalculateFlightPoints(flight: FlightRecord): int
+  + CalculateTotalFlightPoints(): int
+  + ToString(): string
+}
+
+class FlightManager {
+  - staffId: string
+  + GetStaffId(): string
+  + ToString(): string
+}
+
+' Flight Domain
+class FlightRecord {
+  + AirlineCode: string
+  + AirlineName: string
+  + CityName: string
+  + FlightId: int
+  + PlaneId: int
+  + When: DateTime
+  + IsArrival: bool
+  + PlaneCode(): string
+  + FlightCode(): string
+}
+
+class FlightMemory {
+  {static} + AddArrival(flight: FlightRecord): void
+  {static} + AddDeparture(flight: FlightRecord): void
+  {static} + GetArrivals(): IReadOnlyList<FlightRecord>
+  {static} + GetDepartures(): IReadOnlyList<FlightRecord>
+  {static} + GetFlightByCode(flightCode: string): FlightRecord?
+  {static} + IsSeatOccupied(flightCode: string, seat: string): bool
+  {static} + OccupySeat(flightCode: string, seat: string): void
+  {static} + FreeSeat(flightCode: string, seat: string): void
+  {static} + DelayFlight(flightCode: string, delayMinutes: int): void
+}
+
+' Service Layer
+interface IUserService {
+  + EmailExists(email: string): bool
+  + GetUserByEmail(email: string): User?
+  + Authenticate(user: User, password: string): bool
+  + RegisterTraveller(...): Traveller
+  + RegisterFrequentFlyer(...): FrequentFlyer
+  + RegisterFlightManager(...): FlightManager
+  + ChangePassword(user: User, newPassword: string): void
+  + FindUserBySeat(flightCode: string, seat: string): User?
+}
+
+class UserService {
+  - userStore: IUserStore
+  + EmailExists(email: string): bool
+  + GetUserByEmail(email: string): User?
+  + Authenticate(user: User, password: string): bool
+  + RegisterTraveller(...): Traveller
+  + RegisterFrequentFlyer(...): FrequentFlyer
+  + RegisterFlightManager(...): FlightManager
+}
+
+interface IBookingService {
+  + BookArrivalFlight(user: User, flightIndex: int, seatRow: int, seatColumn: string): bool
+  + BookDepartureFlight(user: User, flightIndex: int, seatRow: int, seatColumn: string): bool
+  + GetAvailableArrivalFlights(): IReadOnlyList<FlightRecord>
+  + GetAvailableDepartureFlights(): IReadOnlyList<FlightRecord>
+  + ValidateFlightTiming(user: User, flight: FlightRecord, isArrival: bool): bool
+}
+
+class BookingService {
+  - userService: IUserService
+  - bookingStrategies: Dictionary<Type, BookingStrategy>
+  + BookArrivalFlight(...): bool
+  + BookDepartureFlight(...): bool
+  + GetAvailableArrivalFlights(): IReadOnlyList<FlightRecord>
+  + GetAvailableDepartureFlights(): IReadOnlyList<FlightRecord>
+  + ValidateFlightTiming(...): bool
+}
+
+abstract class BookingStrategy {
+  # userService: IUserService
+  + {abstract} HandleSeatBooking(flightCode: string, requestedSeat: string, user: User): string
+}
+
+class TravellerBookingStrategy {
+  + HandleSeatBooking(...): string
+}
+
+class FrequentFlyerBookingStrategy {
+  + HandleSeatBooking(...): string
+}
+
+' Repository Layer
+interface IUserStore {
+  + GetAll(): IEnumerable<User>
+  + GetTravellers(): IEnumerable<Traveller>
+  + GetFrequentFlyers(): IEnumerable<FrequentFlyer>
+  + GetFlightManagers(): IEnumerable<FlightManager>
+  + FindTravellerByEmail(email: string): Traveller?
+  + FindFrequentFlyerByEmail(email: string): FrequentFlyer?
+  + FindFlightManagerByEmail(email: string): FlightManager?
+  + AddTraveller(traveller: Traveller): void
+  + AddFrequentFlyer(frequentFlyer: FrequentFlyer): void
+  + AddFlightManager(flightManager: FlightManager): void
+}
+
+class InMemoryUserStore {
+  - travellers: List<Traveller>
+  - frequentFlyers: List<FrequentFlyer>
+  - flightManagers: List<FlightManager>
+  + GetAll(): IEnumerable<User>
+  + GetTravellers(): IEnumerable<Traveller>
+  + AddTraveller(traveller: Traveller): void
+}
+
+' Relationships
+User <|-- Traveller
+Traveller <|-- FrequentFlyer
+User <|-- FlightManager
+
+User "0..2" --> FlightRecord : books
+FlightRecord --> FlightMemory : stored in
+
+UserService ..|> IUserService
+UserService --> IUserStore
+InMemoryUserStore ..|> IUserStore
+
+BookingService ..|> IBookingService
+BookingService --> IUserService
+BookingService --> BookingStrategy
+BookingStrategy <|-- TravellerBookingStrategy
+BookingStrategy <|-- FrequentFlyerBookingStrategy
+BookingService --> FlightMemory
+
+@enduml
+
+

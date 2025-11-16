@@ -1,0 +1,101 @@
+@startuml LoginSequenceDiagram
+!theme plain
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+
+title User Login Sequence
+
+actor User
+participant "WelcomeController" as WelcomeCtrl
+participant "WelcomeFacade" as WelcomeFacade
+participant "WelcomeService" as WelcomeService
+participant "WelcomeUI" as WelcomeUI
+participant "LoginMenu" as LoginMenu
+participant "LoginSystem" as LoginSystem
+participant "LoginCredentialsCollector" as Collector
+participant "UserService" as UserService
+participant "IUserStore" as UserStore
+participant "User" as UserObj
+
+User -> WelcomeCtrl: Run()
+activate WelcomeCtrl
+
+WelcomeCtrl -> WelcomeFacade: DisplayWelcomeBanner()
+activate WelcomeFacade
+WelcomeFacade -> WelcomeService: DisplayWelcomeBanner()
+activate WelcomeService
+WelcomeService -> WelcomeUI: DisplayWelcomeBanner()
+activate WelcomeUI
+WelcomeUI --> User: "Welcome to Brisbane Airport"
+deactivate WelcomeUI
+deactivate WelcomeService
+deactivate WelcomeFacade
+
+loop Main Menu Loop
+  WelcomeCtrl -> WelcomeFacade: ProcessMainMenu()
+  activate WelcomeFacade
+  WelcomeFacade -> WelcomeService: GetMainMenuSelection()
+  activate WelcomeService
+  WelcomeService -> WelcomeUI: GetMainMenuSelection()
+  activate WelcomeUI
+  WelcomeUI --> User: Display menu options
+  User --> WelcomeUI: Select "Login"
+  WelcomeUI --> WelcomeService: MainMenuOption.Login
+  deactivate WelcomeUI
+  WelcomeService --> WelcomeFacade: MainMenuOption.Login
+  deactivate WelcomeService
+  deactivate WelcomeFacade
+  
+  WelcomeCtrl -> LoginMenu: ProcessLogin()
+  activate LoginMenu
+  
+  LoginMenu -> Collector: CollectValidRegisteredEmail()
+  activate Collector
+  loop Until valid email
+    Collector --> User: "Please enter your email:"
+    User --> Collector: email
+    Collector -> LoginSystem: IsEmailRegistered()
+    activate LoginSystem
+    LoginSystem -> UserService: EmailExists()
+    activate UserService
+    UserService -> UserStore: GetAll()
+    activate UserStore
+    UserStore --> UserService: IEnumerable<User>
+    deactivate UserStore
+    UserService --> LoginSystem: true/false
+    deactivate UserService
+    LoginSystem --> Collector: true/false
+    deactivate LoginSystem
+  end
+  Collector --> LoginMenu: validEmail
+  deactivate Collector
+  
+  LoginMenu -> Collector: CollectAndAuthenticatePassword()
+  activate Collector
+  loop Until valid password
+    Collector --> User: "Please enter your password:"
+    User --> Collector: password
+    Collector -> LoginSystem: AuthenticateUser(user, password)
+    activate LoginSystem
+    LoginSystem -> UserService: Authenticate()
+    activate UserService
+    UserService -> UserObj: VerifyPassword()
+    activate UserObj
+    UserObj --> UserService: true/false
+    deactivate UserObj
+    UserService --> LoginSystem: true/false
+    deactivate UserService
+    LoginSystem --> Collector: true/false
+    deactivate LoginSystem
+  end
+  Collector --> LoginMenu: authenticated
+  deactivate Collector
+  
+  LoginMenu --> User: "Login successful"
+  deactivate LoginMenu
+end
+
+deactivate WelcomeCtrl
+
+@enduml
+

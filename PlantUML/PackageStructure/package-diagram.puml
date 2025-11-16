@@ -1,0 +1,104 @@
+@startuml PackageDiagram
+!theme plain
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title Brisbane Airport Management System - Package Structure
+
+package "DanielBray_AirportA2" {
+  
+  package "Controllers" {
+    [AirportController]
+    [WelcomeController]
+  }
+  
+  package "Facades" {
+    [WelcomeFacade]
+    [BookingFacade]
+    [UserRegistrationFacade]
+  }
+  
+  package "Services" {
+    [UserService]
+    [BookingService]
+    [LoginSystem]
+    [UserRegistrationService]
+    [WelcomeService]
+  }
+  
+  package "Domain" {
+    [User]
+    [Traveller]
+    [FrequentFlyer]
+    [FlightManager]
+    [FlightRecord]
+    [FlightMemory]
+    [BookingStrategy]
+    [TravellerBookingStrategy]
+    [FrequentFlyerBookingStrategy]
+  }
+  
+  package "Repositories" {
+    [InMemoryUserStore]
+    interface IUserStore
+  }
+  
+  package "UI" {
+    [WelcomeMenu]
+    [LoginMenu]
+    [BookingMenu]
+    [RegistrationMenu]
+    [AirportMenu]
+    [ConsoleUI]
+  }
+  
+  package "Handlers" {
+    [FlightOperationsHandler]
+    [PasswordChangeHandler]
+    [LoginSessionHandlers]
+  }
+  
+  package "Validation" {
+    [InputValidator]
+  }
+  
+  package "Constants" {
+    [AppConsts]
+    [Airlines]
+    [Cities]
+    [ValidationConsts]
+  }
+}
+
+' Dependencies
+[Controllers] --> [Facades]
+[Controllers] --> [Services]
+[Facades] --> [Services]
+[Facades] --> [UI]
+[Services] --> [Domain]
+[Services] --> [Repositories]
+[Services] --> [Validation]
+[Handlers] --> [Services]
+[Handlers] --> [UI]
+[UI] --> [Domain]
+[UI] --> [Validation]
+
+note right of [Domain]
+  Core business logic
+  and entities
+end note
+
+note right of [Services]
+  Application services
+  orchestrating business
+  operations
+end note
+
+note right of [Facades]
+  Simplified interfaces
+  for complex operations
+end note
+
+@enduml
+
+

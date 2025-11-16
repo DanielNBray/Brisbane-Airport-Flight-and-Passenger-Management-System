@@ -1,0 +1,103 @@
+@startuml ArchitectureDiagram
+!theme plain
+skinparam componentStyle rectangle
+skinparam shadowing false
+
+title Brisbane Airport Management System - Architecture Diagram
+
+package "Presentation Layer" {
+  [WelcomeController] as WelcomeCtrl
+  [AirportController] as AirportCtrl
+  [LoginMenu] as LoginMenu
+  [WelcomeMenu] as WelcomeMenu
+  [BookingMenu] as BookingMenu
+  [RegistrationMenu] as RegMenu
+  [AirportMenu] as AirportMenu
+}
+
+package "Facade Layer" {
+  [WelcomeFacade] as WelcomeFacade
+  [BookingFacade] as BookingFacade
+  [UserRegistrationFacade] as RegFacade
+}
+
+package "Service Layer" {
+  interface IWelcomeService
+  interface IBookingService
+  interface IUserService
+  interface IUserRegistration
+  
+  [WelcomeService] as WelcomeService
+  [BookingService] as BookingService
+  [UserService] as UserService
+  [UserRegistrationService] as RegService
+  [LoginSystem] as LoginSystem
+}
+
+package "Domain Layer" {
+  [User] as User
+  [Traveller] as Traveller
+  [FrequentFlyer] as FrequentFlyer
+  [FlightManager] as FlightManager
+  [FlightRecord] as FlightRecord
+  [FlightMemory] as FlightMemory
+  [BookingStrategy] as BookingStrategy
+}
+
+package "Repository Layer" {
+  interface IUserStore
+  [InMemoryUserStore] as UserStore
+}
+
+' Presentation to Facade
+WelcomeCtrl --> WelcomeFacade
+AirportCtrl --> WelcomeFacade
+AirportCtrl --> BookingFacade
+AirportCtrl --> RegFacade
+LoginMenu --> BookingFacade
+
+' Facade to Service
+WelcomeFacade --> IWelcomeService
+WelcomeService ..|> IWelcomeService
+BookingFacade --> IBookingService
+BookingService ..|> IBookingService
+RegFacade --> IUserRegistration
+RegService ..|> IUserRegistration
+
+' Service to Domain
+WelcomeService --> WelcomeMenu
+BookingService --> UserService
+BookingService --> FlightMemory
+UserService --> IUserStore
+RegService --> UserService
+LoginSystem --> UserService
+
+' Service to Repository
+UserService --> IUserStore
+UserStore ..|> IUserStore
+
+' Domain relationships
+BookingService --> BookingStrategy
+BookingService --> User
+User <|-- Traveller
+User <|-- FrequentFlyer
+User <|-- FlightManager
+BookingService --> FlightRecord
+FlightRecord --> FlightMemory
+
+note right of BookingFacade
+  Uses Strategy Pattern
+  for seat booking:
+  - TravellerBookingStrategy
+  - FrequentFlyerBookingStrategy
+end note
+
+note right of FlightMemory
+  Static in-memory storage
+  for flight records
+  and seat management
+end note
+
+@enduml
+
+

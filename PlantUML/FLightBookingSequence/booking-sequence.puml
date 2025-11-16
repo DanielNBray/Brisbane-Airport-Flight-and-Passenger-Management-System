@@ -1,0 +1,93 @@
+@startuml BookingSequenceDiagram
+!theme plain
+skinparam sequenceMessageAlign center
+skinparam shadowing false
+
+title Flight Booking Sequence - Frequent Flyer Booking with Seat Override
+
+actor User
+participant "BookingFacade" as Facade
+participant "BookingService" as Service
+participant "BookingUI" as UI
+participant "FlightMemory" as Memory
+participant "UserService" as UserSvc
+participant "FrequentFlyer" as FF
+participant "FlightRecord" as Flight
+
+User -> Facade: ProcessArrivalFlightBooking()
+activate Facade
+
+Facade -> Service: CanBookArrivalFlight()
+activate Service
+Service -> Memory: GetArrivals()
+Memory --> Service: List<FlightRecord>
+Service --> Facade: true
+deactivate Service
+
+Facade -> UI: PromptArrivalFlightSelection()
+activate UI
+UI --> Facade: flightIndex
+deactivate UI
+
+Facade -> Service: ValidateFlightTiming()
+activate Service
+Service --> Facade: true
+deactivate Service
+
+Facade -> UI: PromptSeatRow()
+activate UI
+UI --> Facade: seatRow
+deactivate UI
+
+Facade -> UI: PromptSeatColumn()
+activate UI
+UI --> Facade: seatColumn
+deactivate UI
+
+Facade -> Memory: IsSeatOccupied()
+activate Memory
+Memory --> Facade: true (seat occupied)
+deactivate Memory
+
+alt Frequent Flyer - Seat Override
+  Facade -> UserSvc: FindUserBySeat()
+  activate UserSvc
+  UserSvc --> Facade: currentOccupant (Traveller)
+  deactivate UserSvc
+  
+  Facade -> Memory: FreeSeat()
+  activate Memory
+  deactivate Memory
+  
+  Facade -> Memory: GetNextAvailableSeat()
+  activate Memory
+  Memory --> Facade: nextSeat
+  deactivate Memory
+  
+  Facade -> currentOccupant: UpdateArrivalSeat()
+  Facade -> Memory: OccupySeat(nextSeat)
+  Facade -> Memory: OccupySeat(requestedSeat)
+end
+
+Facade -> Service: BookArrivalFlight()
+activate Service
+Service -> FF: BookArrivalFlight()
+activate FF
+FF --> Service: void
+deactivate FF
+Service -> Memory: OccupySeat()
+activate Memory
+deactivate Memory
+Service --> Facade: true
+deactivate Service
+
+Facade -> UI: DisplayBookingSuccess()
+activate UI
+UI --> User: "Booking confirmed"
+deactivate UI
+
+deactivate Facade
+
+@enduml
+
+

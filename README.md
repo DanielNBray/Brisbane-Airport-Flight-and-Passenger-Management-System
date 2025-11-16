@@ -92,23 +92,23 @@ Complete object model showing relationships between all classes including inheri
 
 ![Class Diagram](PlantUML/ClassDiagram/Class%20Diagram.png)
 
-### User Hierarchy
-Inheritance structure demonstrating how Traveller and Frequent Flyer extend the base User class, while FlightManager provides administrative capabilities.
+### User Type Hierarchy and Relationships
+Inheritance structure showing how Traveller and Frequent Flyer extend the base User class, while FlightManager provides administrative capabilities. Includes composition relationships with FlightRecord.
 
 ![User Type Hierarchy](PlantUML/UserTypeHierachyAndRelationships/User%20Type%20Hierachy%20and%20Relationships.png)
 
-### Booking Flow Sequence
-Step-by-step interaction diagram showing how users book flights, including seat selection and conflict resolution.
+### Flight Booking Sequence - Frequent Flyer with Seat Override
+Step-by-step interaction diagram demonstrating how frequent flyers can override occupied seats, displacing existing passengers to their next available seat.
 
-![Flight Booking Sequence](PlantUML/FLightBookingSequence/Flight%20Booking%20Sequence.png)
+![Flight Booking Sequence](PlantUML/FLightBookingSequence/Flight%20Booking%20Sequence%20-%20Frequent%20Flyer%20Booking%20with%20Seating%20Override.png)
 
-### Login Flow Sequence
-Authentication process from user input through validation to session establishment.
+### User Login Sequence
+Complete authentication flow from welcome screen through email validation, password authentication, to successful login.
 
-![User Type Hierarchy](PlantUML/UserTypeHierachyAndRelationships/User%20Type%20Hierarchy%20and%20Relationships.png)
+![User Login Sequence](PlantUML/UserLoginSequence/User%20Login%20Sequence.png)
 
 ### Package Structure
-Organization of code into logical packages showing dependency relationships.
+Organization of code into logical packages including Controllers, Facades, Services, Domain, Repositories, UI, Handlers, Validation, and Constants with their dependencies.
 
 ![Package Structure](PlantUML/PackageStructure/Package%20Structure.png)
 
@@ -162,3 +162,12 @@ Replace in-memory storage with persistent database using Entity Framework Core a
 ### Modern User Interface
 Upgrade from console UI to a web application using ASP.NET Core MVC with responsive design and real-time updates via SignalR.
 
+### Additional Enhancements
+- RESTful APIs for third-party integrations
+- JWT-based authentication system
+- Unit and integration testing framework
+- Structured logging with Serilog
+
+---
+
+**Built with .NET 9.0 and C#**

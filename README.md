@@ -4,7 +4,7 @@ A flight management application built with C# and .NET 9.0, demonstrating object
 
 ## How it was made:
 
-This application was developed as part of the CAB201 Programming Principles course at Queensland University of Technology. The system handles real world airline operations including user management, flight booking, and loyalty programs.
+This application was developed as part of the course at Queensland University of Technology. The system handles real world airline operations including user management, flight booking, and loyalty programs.
 
 The architecture follows a layered approach with clear separation between presentation, business logic, and data access layers. I implemented several design patterns including Strategy for seat booking behavior, Facade for complex operation orchestration, and Repository for data abstraction.
 
